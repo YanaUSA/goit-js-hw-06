@@ -8,6 +8,7 @@ const destroyBtnRef = document.querySelector('[data-destroy]');
 const inputRef = document.querySelector('input');
 
 let divToCreate;
+const boxArray = [];
   
 function createBoxes(amount) {
   let divStartSize = 20;
@@ -18,8 +19,9 @@ function createBoxes(amount) {
     divToCreate.style.width = `${divStartSize}px`;
     divToCreate.style.height = `${divStartSize}px`;
     divToCreate.style.backgroundColor = `${getRandomHexColor()}`;
-    divBoxesRef.append(divToCreate);
-  };  
+    boxArray.push(divToCreate);    
+  };
+  divBoxesRef.append(...boxArray);
 };
 
 function destroyBoxes() {
